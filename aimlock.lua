@@ -1,86 +1,68 @@
-local Area = game:GetService("Workspace")
-local RunService = game:GetService("RunService")
-local UIS = game:GetService("UserInputService")
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-local MyCharacter = LocalPlayer.Character
-local MyRoot = MyCharacter:FindFirstChild("HumanoidRootPart")
-local MyHumanoid = MyCharacter:FindFirstChild("Humanoid")
-local Mouse = LocalPlayer:GetMouse()
-local MyView = Area.CurrentCamera
-local MyTeamColor = LocalPlayer.TeamColor
-local HoldingM2 = false
-local Active = false
-local Lock = false
-local Epitaph = .187 ---Note: The Bigger The Number, The More Prediction.
-local HeadOffset = Vector3.new(0, .1, 0)
-
-_G.TeamCheck = false
-_G.AimPart = "HumanoidRootPart"
-_G.Sensitivity = 0
-_G.CircleSides = 64
-_G.CircleColor = Color3.fromRGB(255, 0, 130)
-_G.CircleTransparency = 0
-_G.CircleRadius = 200
-_G.CircleFilled = false
-_G.CircleVisible = true
-_G.CircleThickness = 1
-
-local FOVCircle = Drawing.new("Circle")
-FOVCircle.Position = Vector2.new(MyView.ViewportSize.X / 2, MyView.ViewportSize.Y / 2)
-FOVCircle.Radius = _G.CircleRadius
-FOVCircle.Filled = _G.CircleFilled
-FOVCircle.Color = _G.CircleColor
-FOVCircle.Visible = _G.CircleVisible
-FOVCircle.Transparency = _G.CircleTransparency
-FOVCircle.NumSides = _G.CircleSides
-FOVCircle.Thickness = _G.CircleThickness
-
-local function CursorLock()
-	UIS.MouseBehavior = Enum.MouseBehavior.LockCenter
+local plrs = game:GetService("Players")
+local plr = plrs.LocalPlayer
+local mouse = plr:GetMouse()
+local camera = game:GetService("Workspace").CurrentCamera
+ 
+--> FUNCTIONS <--
+function notBehindWall(target)
+    local ray = Ray.new(plr.Character.Head.Position, (target.Position - plr.Character.Head.Position).Unit * 300)
+    local part, position = game:GetService("Workspace"):FindPartOnRayWithIgnoreList(ray, {plr.Character}, false, true)
+    if part then
+        local humanoid = part.Parent:FindFirstChildOfClass("Humanoid")
+        if not humanoid then
+            humanoid = part.Parent.Parent:FindFirstChildOfClass("Humanoid")
+        end
+        if humanoid and target and humanoid.Parent == target.Parent then
+            local pos, visible = camera:WorldToScreenPoint(target.Position)
+            if visible then
+                return true
+            end
+        end
+    end
 end
-local function UnLockCursor()
-	HoldingM2 = false Active = false Lock = false 
-	UIS.MouseBehavior = Enum.MouseBehavior.Default
+ 
+function getPlayerClosestToMouse()
+    local target = nil
+    local maxDist = 100
+    for _,v in pairs(plrs:GetPlayers()) do
+        if v.Character then
+            if v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("HumanoidRootPart") and v.TeamColor ~= plr.TeamColor then
+                local pos, vis = camera:WorldToViewportPoint(v.Character.HumanoidRootPart.Position)
+                local dist = (Vector2.new(mouse.X, mouse.Y) - Vector2.new(pos.X, pos.Y)).magnitude
+                if dist < maxDist and vis then
+                    local torsoPos = camera:WorldToViewportPoint(v.Character.HumanoidRootPart.Position)
+                    local torsoDist = (Vector2.new(mouse.X, mouse.Y) - Vector2.new(torsoPos.X, torsoPos.Y)).magnitude
+                    local headPos = camera:WorldToViewportPoint(v.Character.Head.Position)
+                    local headDist = (Vector2.new(mouse.X, mouse.Y) - Vector2.new(headPos.X, headPos.Y)).magnitude
+                    if torsoDist > headDist then
+                        if notBehindWall(v.Character.Head) then
+                            target = v.Character.Head
+                        end
+                    else
+                        if notBehindWall(v.Character.HumanoidRootPart) then
+                            target = v.Character.HumanoidRootPart
+                        end
+                    end
+                    maxDist = dist
+                end
+            end
+        end
+    end
+    return target
 end
-function FindNearestPlayer()
-	local dist = math.huge
-	local Target = nil
-	for _, v in pairs(Players:GetPlayers()) do
-		if v ~= LocalPlayer and v.Character:FindFirstChild("Humanoid") and v.Character:FindFirstChild("Humanoid").Health > 0 and v.Character:FindFirstChild("HumanoidRootPart") and v then
-			local TheirCharacter = v.Character
-			local CharacterRoot, Visible = MyView:WorldToViewportPoint(TheirCharacter[_G.AimPart].Position)
-			if Visible then
-				local RealMag = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(CharacterRoot.X, CharacterRoot.Y)).Magnitude
-				if RealMag < dist and RealMag < FOVCircle.Radius then
-					dist = RealMag
-					Target = TheirCharacter
-				end
-			end
-		end
-	end
-	return Target
-end
-
-UIS.InputBegan:Connect(function(Input)
-	if Input.UserInputType == Enum.UserInputType.MouseButton2 then
-		HoldingM2 = true
-		Active = true
-		Lock = true
-		if Active then
-        	local The_Enemy = FindNearestPlayer()
-			while HoldingM2 do task.wait(.000001)
-				if Lock and The_Enemy ~= nil then
-					local Future = The_Enemy.HumanoidRootPart.CFrame + (The_Enemy.HumanoidRootPart.Velocity * Epitaph + HeadOffset)
-					MyView.CFrame = CFrame.lookAt(MyView.CFrame.Position, Future.Position)
-					CursorLock()
-				end
-			end
-		end
-	end
-end)
-UIS.InputEnded:Connect(function(Input)
-	if Input.UserInputType == Enum.UserInputType.MouseButton2 then
-		UnLockCursor()
-	end
+ 
+--> Hooking to the remote <--
+local gmt = getrawmetatable(game)
+setreadonly(gmt, false)
+local oldNamecall = gmt.__namecall
+ 
+gmt.__namecall = newcclosure(function(self, ...)
+    local Args = {...}
+    local method = getnamecallmethod()
+    if tostring(self) == "HitPart" and tostring(method) == "FireServer" then
+        Args[1] = getPlayerClosestToMouse()
+        Args[2] = getPlayerClosestToMouse().Position
+        return self.FireServer(self, unpack(Args))
+    end
+    return oldNamecall(self, ...)
 end)
