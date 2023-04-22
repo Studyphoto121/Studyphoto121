@@ -9034,11 +9034,11 @@ L_118_:AddToggle({
 })
 local L_119_ = {
 	Standard = {
-		"incap! incap! incap! incap! incap! incap! incap! incap! incap! incap! incap!",
-		"incap.solutions", -- revival
-		"$$$",
-		"1 sit nn 1 sit nn 1 sit nn 1 sit nn 1 sit nn",
-		"who? who? who? who? who? who? who? who? who? who? who?"
+		"nigger nigger nigger nigger nigger nigger nigger nigger",
+		"incap.nigger", -- revival
+		"Got Dumb! You MF",
+		"1 1 1 1 1 1 1 1 1 1 1 1 1",
+		"rq rq rq rq rq rq rq rq rq rq rq rq rq rq rq rq rq rq rq rq"
 	},
 	Emojis = {
 		"ðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒðŸ˜ƒ",
