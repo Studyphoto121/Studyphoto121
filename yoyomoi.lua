@@ -13,6 +13,6 @@ local __aliasText = ""
 
 __aliasText = currencyString
 
-while wait(time) do
+while wait(Time) do
     Acc:SetAlias(__aliasText)
 end
