@@ -12,4 +12,7 @@ local currencyString = Library.Functions.NumberShorten(currencyLeft) .. " "  .. 
 local __aliasText = ""
 
 __aliasText = currencyString
-Acc:SetAlias(__aliasText)
+
+while wait(time) do
+    Acc:SetAlias(__aliasText)
+end
