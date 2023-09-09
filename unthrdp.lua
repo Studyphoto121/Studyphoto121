@@ -1,12 +1,9 @@
-local LocalPlayer = game.Players.LocalPlayer
-local CurrentCamera = workspace.CurrentCamera
+local distance = -10
 
---// Script
-local newindex; newindex = hookmetamethod(game, '__newindex', function(obj, idx, val)
-
-   if obj == CurrentCamera and idx == 'CFrame' then
-       val = val + (val.LookVector * 7)
-   end
-
-   return newindex(obj, idx, val)
+local newindex; newindex = hookmetamethod(game, "__newindex", function(self, key, value)
+    if tostring(self) == "Camera" and key == "CFrame" then
+        value = value * CFrame.new(0, 0, distance)
+    end
+   
+    return newindex(self, key, value)
 end)
