@@ -1,3 +1,5 @@
+--1.1 v
+
 game.StarterGui:SetCore("SendNotification", {
     Title = "CupCake",
     Text = "CupCake Lock On The Top",
@@ -965,7 +967,7 @@ UserInputService.InputEnded:Connect(function(Key, Break)
 if Key.UserInputType == InputType.MouseButton2 and not Break then
 Settings.Aimbot.Aiming = false
 end
-if Key.UserInputType == InputType.MouseButton1 and not Break then
+if Key.UserInputType == InputType.MouseButton9 and not Break then
 if Module.Functions.Network(LocalPlayer) then
 --[[
 local GRightWrist = Instance.new("Motor6D", LocalPlayer.Character.RightHand)
