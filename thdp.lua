@@ -1,4 +1,4 @@
---1.1 v
+--1.2 v
 
 game.StarterGui:SetCore("SendNotification", {
     Title = "CupCake",
@@ -57,12 +57,9 @@ Type = "After Dead",
 OldPlayer = "",
 Cooldown = false,
 CustomMessage = false,
-CustomMessageText = "gg",
+CustomMessageText = "",
 Message = {
-"gg",
-"gg wp",
-"lol",
-"ngl ur aim r bad"
+""
 }
 },
 Aimbot = {
@@ -823,7 +820,7 @@ KillSaySection:AddToggle('Custom Message', false, function(State)
 Settings.KillSay.CustomMessage = State
 end)
 
-KillSaySection:AddTextbox("Custom Message Text", "gg wp", function(Text)
+KillSaySection:AddTextbox("Custom Message Text", "", function(Text)
 Settings.KillSay.CustomMessageText = Text
 end)
 
