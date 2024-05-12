@@ -869,7 +869,7 @@ MainSection:AddToggle('Wall Check', false, function(State)
 Settings.Target.WallCheck = State
 end)
 
-
+if not PuppywareSettings.PerformanceMode then
 local ESPLibrary = Module.Functions.HttpGet("https://gist.githubusercontent.com/VaultGitos/5a937cdc7a753160232d86dcc3ce79a6/raw/99cce502c74b1574abfd8d79d36da3c8aa3be83d/ESP.lua")
 local VisualsTab = Window:CreateTab("Visuals")
 local ESPSection = VisualsTab:CreateSector("ESP", "left")
@@ -909,6 +909,7 @@ end)
 ESPSection:AddColorpicker("Cham Color 2", Color3.fromRGB(255, 255, 255), function(Color)
 ESPLibrary.ChamColor2 = Color
 end)
+end
 
 game:GetService("Workspace").Players.ChildRemoved:Connect(function(PlayerThatIsGone)
 if PlayerThatIsGone.Name == Settings.KillSay.OldPlayer and Settings.KillSay.Type == "After Dead" then
