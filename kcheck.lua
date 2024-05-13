@@ -5,7 +5,7 @@ if _G.Key == keys then
     if _G.Version == "private" then
         versionURL = "https://raw.githubusercontent.com/Studyphoto121/Studyphoto121/main/Script.lua"
     elseif _G.Version == "cupcake" then
-        versionURL = "https://raw.githubusercontent.com/sdfesdfsedf/srgtergasdfs/main/wadsfwes"
+        versionURL = "https://raw.githubusercontent.com/Studyphoto121/Studyphoto121/main/Script.lua"
     elseif _G.Version == "cupcakev2" then
         versionURL = "https://raw.githubusercontent.com/Studyphoto121/Studyphoto121/main/cup%20cake%20v2.lua"
     elseif _G.Version == "antilock" then
