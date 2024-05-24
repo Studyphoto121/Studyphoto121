@@ -10,6 +10,8 @@ if _G.Key == keys then
         versionURL = "https://raw.githubusercontent.com/Studyphoto121/Studyphoto121/main/cup%20cake%20v2.lua"
     elseif _G.Version == "antilock" then
         versionURL = "https://raw.githubusercontent.com/AvianProjects/Dahood/main/AntilockerV2"
+    elseif _G.Version == "streamable1" then
+        versionURL = "https://raw.githubusercontent.com/Studyphoto121/Studyphoto121/main/camlocke.lua"
     else
         print("Invalid version")
         return
