@@ -1141,7 +1141,7 @@ function load()
             ["fatality.wav"] = "https://github.com/nyulachan/nyula/blob/main/Sounds/fatality.wav?raw=true",
             ["phonk.wav"] = "https://github.com/nyulachan/nyula/blob/main/Sounds/phonk.wav?raw=true",
             ["sparkle.wav"] = "https://github.com/nyulachan/nyula/blob/main/Sounds/sparkle.wav?raw=true",
-            ["rust headshot.wav"] = "https://github.com/Studyphoto121/Studyphoto121/raw/main/Rust%20Headshot%20Sound%20Effect.wav"
+            ["rustheadshot.wav"] = "https://github.com/Studyphoto121/Studyphoto121/raw/main/rustheadshot"
         }
 
         if not isfolder("hitsounds") then
