@@ -1,4 +1,4 @@
-local keys = 'CKFK9-QNGF2-D34FM-99QX3-8XC4K'
+local keys = 'NPPR9-FWDCX-D2C8J-H872K-2YT43'
 
 if _G.Key == keys then
     local versionURL
