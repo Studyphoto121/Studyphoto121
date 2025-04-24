@@ -8,9 +8,9 @@ local Mouse = LocalPlayer:GetMouse()
 
 -- // GLOBAL SETTINGS
 _G.VAMPX = {
-    ESPVisible = true,
-    ShowName = true,
-    ShowDistance = true,
+    ESPVisible = false,
+    ShowName = false,
+    ShowDistance = false,
     ShowHealth = false,
     TeamCheck = false,
     TextColor = Color3.fromRGB(255, 255, 255),
@@ -23,7 +23,7 @@ _G.VAMPX = {
     Camlock = false,
     CamlockMode = "Toggle",
     CamlockKey = Enum.KeyCode.C,
-    FOVVisible = true,
+    FOVVisible = false,
     FOVRadius = 90,
     AimPart = "Head",
     Prediction = 0.165,
@@ -48,7 +48,7 @@ local misc = window:page({name = "Misc"})
 local setting = window:page({name = "Setting"})
 
 -- // FOV CIRCLE
-_G.VAMPX.FOVColor = Color3.fromRGB(225, 58, 81)
+_G.VAMPX.FOVColor = Color3.fromRGB(255, 255, 255)
 local fovCircle = Drawing.new("Circle")
 fovCircle.Color = _G.VAMPX.FOVColor
 fovCircle.Thickness = 1
@@ -110,7 +110,7 @@ UserInputService.InputEnded:Connect(function(input, processed)
 end)
 
 -- // LEGIT UI
-local legitSection = legit:section({name = "Aimbot", side = "left", size = 120})
+local legitSection = legit:section({name = "Aimbot", side = "left", size = 400})
 legitSection:colorpicker({name = "FOV Color", default = _G.VAMPX.FOVColor, callback = function(c) _G.VAMPX.FOVColor = c end})
 legitSection:toggle({name = "Camlock", def = false, callback = function(v) _G.VAMPX.Camlock = v end})
 legitSection:toggle({name = "Show FOV", def = true, callback = function(v) _G.VAMPX.FOVVisible = v end})
@@ -129,7 +129,7 @@ legitSection:dropdown({name = "Camlock Mode", def = "Toggle", options = {"Toggle
 legitSection:keybind({name = "Set Camlock Key", def = _G.VAMPX.CamlockKey, callback = function(key) _G.VAMPX.CamlockKey = key end})
 
 -- // CHARACTER UI
-local charSection = character:section({name = "Speed", side = "left", size = 100})
+local charSection = character:section({name = "Speed", side = "left", size = 170})
 charSection:keybind({name = "Set Speed Key", def = _G.VAMPX.SpeedKey, callback = function(key)
     _G.VAMPX.SpeedKey = key
 end})
@@ -241,7 +241,7 @@ _G.VAMPX.ShowBox = true
 _G.VAMPX.ShowTracer = true
 _G.VAMPX.ShowChams = false
 _G.VAMPX.ShowHealthBar = false
-local visual = visualTab:section({name = "ESP", side = "left", size = 100})
+local visual = visualTab:section({name = "ESP", side = "left", size = 400})
 visual:toggle({name = "Enable ESP", def = _G.VAMPX.ESPVisible, callback = function(v) _G.VAMPX.ESPVisible = v end})
 visual:toggle({name = "Team Check", def = _G.VAMPX.TeamCheck, callback = function(v) _G.VAMPX.TeamCheck = v end})
 visual:toggle({name = "Show Name", def = _G.VAMPX.ShowName, callback = function(v) _G.VAMPX.ShowName = v end})
