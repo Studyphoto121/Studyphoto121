@@ -84,3 +84,66 @@ function Watermark.Create()
 end
 
 return Watermark
+
+local KeybindList = {}
+
+local keybinds = {
+	{ name = "auto equip", key = "B" },
+	{ name = "defensive", key = "K" },
+	{ name = "target select", key = "C" },
+	{ name = "velocity", key = "U" },
+	{ name = "follow target", key = "T" },
+	{ name = "auto stomp", key = "N" },
+	{ name = "auto armor", key = "M" },
+	{ name = "auto ammo", key = "L" },
+	{ name = "View Target", key = "Y" },
+	{ name = "ESP", key = "P" },
+	{ name = "fly", key = "X" },
+	{ name = "speed", key = "Z" },
+	{ name = "prediction", key = "V" },
+}
+
+function KeybindList.Create()
+	local screenGui = Instance.new("ScreenGui")
+	screenGui.Name = "KeybindList"
+	screenGui.ResetOnSpawn = false
+	screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	screenGui.Parent = game:GetService("CoreGui")
+
+	local holder = Instance.new("Frame")
+	holder.Name = "ListHolder"
+	holder.Size = UDim2.new(0, 200, 0, #keybinds * 20 + 10)
+	holder.Position = UDim2.new(1, -210, 0.3, 0)
+	holder.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	holder.BorderSizePixel = 0
+	holder.BackgroundTransparency = 0.2
+	holder.ZIndex = 5
+	holder.Parent = screenGui
+
+	local uiStroke = Instance.new("UIStroke")
+	uiStroke.Color = Color3.fromRGB(255, 255, 255)
+	uiStroke.Thickness = 1
+	uiStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	uiStroke.Parent = holder
+
+	local uiListLayout = Instance.new("UIListLayout")
+	uiListLayout.Padding = UDim.new(0, 2)
+	uiListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	uiListLayout.Parent = holder
+
+	for _, item in ipairs(keybinds) do
+		local line = Instance.new("TextLabel")
+		line.Size = UDim2.new(1, -10, 0, 18)
+		line.BackgroundTransparency = 1
+		line.TextXAlignment = Enum.TextXAlignment.Left
+		line.Font = Enum.Font.Code
+		line.TextSize = 14
+		line.TextColor3 = Color3.fromRGB(220, 220, 220)
+		line.Text = string.format(" %s [%s]", item.name, item.key)
+		line.ZIndex = 6
+		line.Parent = holder
+	end
+end
+
+return KeybindList
+
