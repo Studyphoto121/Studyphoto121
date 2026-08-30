@@ -1,24 +1,19 @@
 {
-  "name": "private web radar one-match release",
-  "created_at": "2026-08-30T21:04:09+07:00",
+  "name": "private web radar auto-detect release",
+  "created_at": "2026-08-30T21:44:10.7843699+07:00",
   "artifact": "0x3z1.dll",
-  "sha256": "59E7E95E6CB3268D5BFBFF38A088E1CF0484D257A635F66DF4A2EBBC502E09B5",
-  "size": 4911464,
+  "sha256": "C5C09B36FB541184C7D46D4B32C892BF88BA4FC7D422D057AD69E9B2C41F0784",
+  "size": 4916072,
   "architecture": "x64",
   "installed_copy": "workspace/0x3z1.dll",
-  "replaced_sha256": "7D770BB1F55F8F9BA1A8CFB8F39F19F4DF96EDD39CBF82D97F7BAF8BCE6C7DD2",
+  "replaced_sha256": "59E7E95E6CB3268D5BFBFF38A088E1CF0484D257A635F66DF4A2EBBC502E09B5",
   "features": [
-    "HTTP radar UI and map assets served by the DLL on 127.0.0.1:6767",
-    "random TryCloudflare hostname per activation",
-    "128-bit random unguessable path token",
-    "Copy Match Link, Renew Match Link, and End Match Link UI actions",
-    "automatic link shutdown after match telemetry is absent for 30 seconds",
-    "same map/player/ally/visibility/yaw telemetry as the in-game radar",
-    "signed Cloudflare helper verification before execution"
-  ],
-  "runtime_helper": {
-    "downloaded_on_first_use": "cloudflared-windows-amd64.exe",
-    "source": "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe",
-    "signature_requirement": "Valid Authenticode chain and signer display name containing Cloudflare"
-  }
+    "automatic valid-match detection",
+    "one random TryCloudflare link per match",
+    "single Copy Link button",
+    "automatic shutdown after 30 seconds without telemetry",
+    "inheritable restricted cloudflared stdio handles",
+    "10 second failure retry backoff",
+    "runtime web-radar status logging"
+  ]
 }
