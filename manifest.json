@@ -2,7 +2,7 @@
   "name": "private web radar auto-detect release",
   "created_at": "2026-08-30T21:44:10.7843699+07:00",
   "artifact": "0x3z1.dll",
-  "sha256": "C5C09B36FB541184C7D46D4B32C892BF88BA4FC7D422D057AD69E9B2C41F0784",
+  "sha256": "75FC6E9DA54050072DAFCBF8A470FEF79EC826B8026C4BDF6F1A31CFBA7BCDB2",
   "size": 4916072,
   "architecture": "x64",
   "installed_copy": "workspace/0x3z1.dll",
@@ -10,7 +10,7 @@
   "features": [
     "automatic valid-match detection",
     "one random TryCloudflare link per match",
-    "single Copy Link button",
+    "single Copy Link button; clipboard changes only when pressed",
     "automatic shutdown after 30 seconds without telemetry",
     "inheritable restricted cloudflared stdio handles",
     "10 second failure retry backoff",
