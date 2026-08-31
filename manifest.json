@@ -1,18 +1,19 @@
 {
-  "name": "private Web Radar leaderboard",
-  "created_at": "2026-08-31T14:13:22.6124585+07:00",
+  "name": "private Web Radar smooth motion",
+  "created_at": "2026-08-31T16:33:18.1775796+07:00",
   "artifact": "0x3z1.dll",
-  "sha256": "6E8D31105525D94C535EAAF9A84314B0F8240F89AC148FAC17ECF1285F41382A",
-  "size": 4980720,
+  "sha256": "73ADD4742971095D60BF306B83D3F5B5AC252F26C5709B3C68C88A243EFED606",
+  "size": 4986728,
   "architecture": "x64",
-  "replaced_sha256": "58751CE499F2518889A8D0A2AB87F444AAC60A9640923B0E7AE2B44C10CE6A5C",
-  "changed_branch": "WebRadar/PlayerList HTML telemetry",
+  "replaced_sha256": "6E8D31105525D94C535EAAF9A84314B0F8240F89AC148FAC17ECF1285F41382A",
+  "changed_branch": "WebRadar/interpolation-extrapolation",
   "features": [
-    "HTML leaderboard sourced from Player List snapshot",
-    "Weapon visibility toggle for markers and leaderboard",
-    "HP visibility toggle for markers and leaderboard",
-    "200 ms bounded HP/weapon cache",
-    "persistent SSE radar stream retained",
-    "all Bandit catalog regressions retained"
+    "45 ms snapshot interpolation buffer",
+    "smoothstep interpolation between telemetry samples",
+    "velocity extrapolation capped at 100 ms",
+    "extrapolation damping to prevent overshoot",
+    "teleport and round-state reset",
+    "requestAnimationFrame display-rate rendering",
+    "leaderboard Weapon and HP toggles retained"
   ]
 }
