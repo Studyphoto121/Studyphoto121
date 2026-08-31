@@ -1,17 +1,17 @@
 {
-  "name": "private bandit visible runtime-load fix",
-  "created_at": "2026-08-31T12:45:26.1564042+07:00",
+  "name": "private Bandit 13.04 apply retry fix",
+  "created_at": "2026-08-31T13:54:10.2812046+07:00",
   "artifact": "0x3z1.dll",
-  "sha256": "9284050097E7368E556B7B8066FC48E4B2655D51CB05A92DD1C56FC895BB0DA6",
-  "size": 4964200,
+  "sha256": "5F8A8F303AEA1C2C2E5B44508545D67C96801B7CC27B79690856455917DC499C",
+  "size": 4964712,
   "architecture": "x64",
-  "replaced_sha256": "6205D18A5639757340F7CF2C3BA00FCC002C0A8B395CAC6BF9722767B9FD2EE8",
-  "changed_branch": "CompactPistol/Bandit runtime catalog fallback",
+  "replaced_sha256": "DF71DB8A1D68ED572CBD9F49C01716CEDBDA8038E00282B941AF7F8221B774A2",
+  "changed_branch": "CompactPistol/Bandit pending catalog hydration",
   "features": [
-    "nine Bandit cards are seeded before runtime inventory streaming",
-    "canonical SDK object paths for skin and base chroma",
-    "guarded lazy StaticLoadObject only after the user selects a card",
-    "real Bandit thumbnails retained by compiled thumbnail catalog",
-    "type-20 selection continues through the existing apply state"
+    "13.04 uses seven canonical Bandit runtime assets",
+    "failed first hydration remains queued instead of being consumed",
+    "bounded 150/500/1500 ms retry cadence",
+    "catalog refresh is throttled",
+    "selection is committed only after successful runtime apply"
   ]
 }
