@@ -1,22 +1,18 @@
 {
-  "name": "private radar 144hz release",
-  "created_at": "2026-08-31T11:16:48.2825819+07:00",
+  "name": "private web radar live stream and score release",
+  "created_at": "2026-08-31T11:48:50.7680069+07:00",
   "artifact": "0x3z1.dll",
-  "sha256": "115F0159D32C86A4103A9BA33A8F0ACE478876FC8CD17E057B1941BEFC626A4A",
-  "size": 4937064,
+  "sha256": "BBE10598031E7D241DDE028950FF3FB00CEC385177EF3AF211B8DF64CE7084BA",
+  "size": 4943208,
   "architecture": "x64",
-  "installed_copy": "workspace/0x3z1.dll",
-  "replaced_sha256": "75FC6E9DA54050072DAFCBF8A470FEF79EC826B8026C4BDF6F1A31CFBA7BCDB2",
+  "replaced_sha256": "115F0159D32C86A4103A9BA33A8F0ACE478876FC8CD17E057B1941BEFC626A4A",
   "features": [
-    "bounded 60 Hz SDK sampling with display-rate interpolation",
-    "20 Hz cached line-of-sight checks",
-    "SEH-guarded per-actor SDK snapshot reads",
-    "thread-safe world and native radar smoothing",
-    "failed portrait load cache",
-    "persistent Web Radar marker DOM",
-    "60 Hz Web Radar telemetry polling and requestAnimationFrame rendering",
-    "reference-style circular real-map Web Radar UI",
-    "teammate portrait sidebar",
-    "center, rotate, enemy-only, names and zoom controls"
+    "persistent SSE telemetry stream",
+    "display-rate motion interpolation with bounded velocity prediction",
+    "in-game ally and enemy score",
+    "350 ms round-transition stale-object quarantine",
+    "SEH guarded root, actor-array, local-frame, actor and object-name reads",
+    "concurrent HTTP clients with shutdown drain",
+    "50 ms polling fallback only while stream is disconnected"
   ]
 }
