@@ -1,24 +1,17 @@
 {
-  "name": "private pannable real-map minimap",
-  "created_at": "2026-08-31T12:18:38.0188935+07:00",
+  "name": "private bandit visible runtime-load fix",
+  "created_at": "2026-08-31T12:45:26.1564042+07:00",
   "artifact": "0x3z1.dll",
-  "sha256": "6205D18A5639757340F7CF2C3BA00FCC002C0A8B395CAC6BF9722767B9FD2EE8",
-  "size": 4953960,
+  "sha256": "9284050097E7368E556B7B8066FC48E4B2655D51CB05A92DD1C56FC895BB0DA6",
+  "size": 4964200,
   "architecture": "x64",
-  "replaced_sha256": "2E8659EAB31C64D4BC9A2491F9AC3DFC4568F9724F0099BCE8985CA57FCD8B7C",
-  "changed_fields": [
-    "Map Pan X",
-    "Map Pan Y",
-    "Reset Map Pan"
-  ],
-  "interaction": [
-    "RMB drag map surface while menu is open",
-    "double RMB resets map pan",
-    "LMB continues to move the complete radar panel"
-  ],
+  "replaced_sha256": "6205D18A5639757340F7CF2C3BA00FCC002C0A8B395CAC6BF9722767B9FD2EE8",
+  "changed_branch": "CompactPistol/Bandit runtime catalog fallback",
   "features": [
-    "map texture and every projected marker share one pan transform",
-    "map stays clipped to the fixed minimap viewport",
-    "normalized pan is persisted and clamped from -1 to 1"
+    "nine Bandit cards are seeded before runtime inventory streaming",
+    "canonical SDK object paths for skin and base chroma",
+    "guarded lazy StaticLoadObject only after the user selects a card",
+    "real Bandit thumbnails retained by compiled thumbnail catalog",
+    "type-20 selection continues through the existing apply state"
   ]
 }
