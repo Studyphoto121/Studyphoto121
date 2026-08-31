@@ -1,19 +1,17 @@
 {
-  "name": "private web radar score and round-start stability release",
-  "created_at": "2026-08-31T11:56:25.218756+07:00",
+  "name": "private bandit catalog and apply fix",
+  "created_at": "2026-08-31T12:06:26.8780868+07:00",
   "artifact": "0x3z1.dll",
-  "sha256": "04CEF494BF2BE5D25458824C022F778A2BAA9EAC14C8C11AD6D610907C1F88D5",
-  "size": 4943208,
+  "sha256": "2E8659EAB31C64D4BC9A2491F9AC3DFC4568F9724F0099BCE8985CA57FCD8B7C",
+  "size": 4950376,
   "architecture": "x64",
-  "replaced_sha256": "115F0159D32C86A4103A9BA33A8F0ACE478876FC8CD17E057B1941BEFC626A4A",
+  "replaced_sha256": "04CEF494BF2BE5D25458824C022F778A2BAA9EAC14C8C11AD6D610907C1F88D5",
   "features": [
-    "persistent SSE telemetry stream",
-    "display-rate interpolation with 120 ms bounded prediction",
-    "ally:enemy in-game score",
-    "350 ms radar stale-object quarantine",
-    "SEH guarded radar SDK reads",
-    "150 ms / 3-frame camera-manager stability window",
-    "success-reporting shadow-vtable rehook",
-    "guarded camera-manager SDK read"
+    "native Compact asset-name recognition",
+    "Bandit weapon type 20 for runtime and CDO names",
+    "native/CDO four-form asset resolver",
+    "Bandit catalog seeding before Collection opens",
+    "base chroma resolution for runtime apply",
+    "raw PrimaryAsset normalization"
   ]
 }
