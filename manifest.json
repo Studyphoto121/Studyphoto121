@@ -1,17 +1,17 @@
 {
-  "name": "private Bandit 13.04 apply retry fix",
-  "created_at": "2026-08-31T13:54:10.2812046+07:00",
+  "name": "private all Bandit skins visible",
+  "created_at": "2026-08-31T14:01:11.1939396+07:00",
   "artifact": "0x3z1.dll",
-  "sha256": "5F8A8F303AEA1C2C2E5B44508545D67C96801B7CC27B79690856455917DC499C",
-  "size": 4964712,
+  "sha256": "58751CE499F2518889A8D0A2AB87F444AAC60A9640923B0E7AE2B44C10CE6A5C",
+  "size": 4960752,
   "architecture": "x64",
-  "replaced_sha256": "DF71DB8A1D68ED572CBD9F49C01716CEDBDA8038E00282B941AF7F8221B774A2",
-  "changed_branch": "CompactPistol/Bandit pending catalog hydration",
+  "replaced_sha256": "5F8A8F303AEA1C2C2E5B44508545D67C96801B7CC27B79690856455917DC499C",
+  "changed_branch": "CompactPistol/Bandit catalog visibility",
   "features": [
-    "13.04 uses seven canonical Bandit runtime assets",
-    "failed first hydration remains queued instead of being consumed",
-    "bounded 150/500/1500 ms retry cadence",
-    "catalog refresh is throttled",
-    "selection is committed only after successful runtime apply"
+    "nine Bandit cards visible with real artwork",
+    "seven SDK 13.04 runtime assets remain selectable",
+    "Gourmand and Aeris are catalog-only previews",
+    "catalog-only cards never enter ApplySkin",
+    "Bandit hydration retry remains enabled"
   ]
 }
