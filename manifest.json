@@ -1,13 +1,13 @@
 {
-  "name": "private LuaJIT 2.1 API 200",
-  "created_at": "2026-08-31T18:11:52.7408201+07:00",
+  "name": "private Silent View and Rage ABI repair",
+  "created_at": "2026-08-31T11:35:24.541556+00:00",
   "artifact": "0x3z1.dll",
-  "sha256": "CC7578A4834B5AD11DD35D57D0DD1133C3A36979D453343162F415952E9FF53C",
-  "size": 5200232,
+  "sha256": "ABEB42409E98A37136D09E6D8268842380975CE6490A81ADDC58DBED035F308E",
+  "size": 5204328,
   "architecture": "x64",
   "authenticode": "Valid",
-  "replaced_sha256": "73ADD4742971095D60BF306B83D3F5B5AC252F26C5709B3C68C88A243EFED606",
-  "changed_branch": "LuaExecutor/runtime and API compatibility",
+  "replaced_sha256": "CC7578A4834B5AD11DD35D57D0DD1133C3A36979D453343162F415952E9FF53C",
+  "changed_branch": "Silent view lifecycle, checked firing pose, Rage/transform parameter ABI",
   "runtime_version": "LuaJIT 2.1.1787165859",
   "luajit_commit": "1ee778a4e37122d8ca7d5733c590a47dafd6b15c",
   "features": [
@@ -19,9 +19,19 @@
     "interpreter hook mode via app.jit_native(false); not a sandbox",
     "registry owner compatibility bridge",
     "unconditional hook cleanup after protected calls",
-    "checked integer conversion range/type"
+    "checked integer conversion range/type",
+    "Live silent view control-delta tracking and identity-bound restoration",
+    "Checked SDK firing pose and finite angular correction",
+    "HitResult 0xF0 layout and typed swept-transform parameter blocks",
+    "NoSpread invalid-input rejection and exception circuit breaker",
+    "Smoke cache reset on world/clock change",
+    "Rage crash scope diagnostics"
   ],
   "in_game_tested": false,
   "runtime_probe_passes": 14,
-  "example_scripts_syntax_passes": 11
+  "example_scripts_syntax_passes": 11,
+  "customer_crash_root_cause_confirmed": false,
+  "silent_helper_checks": 44,
+  "transform_abi_checks": 13,
+  "smoke_lifecycle_scenarios": 2
 }
