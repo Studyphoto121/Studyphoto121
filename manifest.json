@@ -1,17 +1,24 @@
 {
-  "name": "private bandit catalog and apply fix",
-  "created_at": "2026-08-31T12:06:26.8780868+07:00",
+  "name": "private pannable real-map minimap",
+  "created_at": "2026-08-31T12:18:38.0188935+07:00",
   "artifact": "0x3z1.dll",
-  "sha256": "2E8659EAB31C64D4BC9A2491F9AC3DFC4568F9724F0099BCE8985CA57FCD8B7C",
-  "size": 4950376,
+  "sha256": "6205D18A5639757340F7CF2C3BA00FCC002C0A8B395CAC6BF9722767B9FD2EE8",
+  "size": 4953960,
   "architecture": "x64",
-  "replaced_sha256": "04CEF494BF2BE5D25458824C022F778A2BAA9EAC14C8C11AD6D610907C1F88D5",
+  "replaced_sha256": "2E8659EAB31C64D4BC9A2491F9AC3DFC4568F9724F0099BCE8985CA57FCD8B7C",
+  "changed_fields": [
+    "Map Pan X",
+    "Map Pan Y",
+    "Reset Map Pan"
+  ],
+  "interaction": [
+    "RMB drag map surface while menu is open",
+    "double RMB resets map pan",
+    "LMB continues to move the complete radar panel"
+  ],
   "features": [
-    "native Compact asset-name recognition",
-    "Bandit weapon type 20 for runtime and CDO names",
-    "native/CDO four-form asset resolver",
-    "Bandit catalog seeding before Collection opens",
-    "base chroma resolution for runtime apply",
-    "raw PrimaryAsset normalization"
+    "map texture and every projected marker share one pan transform",
+    "map stays clipped to the fixed minimap viewport",
+    "normalized pan is persisted and clamped from -1 to 1"
   ]
 }
