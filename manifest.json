@@ -1,13 +1,13 @@
 {
   "name": "private Lua API extensions and GameSense-style compatibility",
-  "created_at": "2026-09-01T19:17:46.2574233Z",
+  "created_at": "2026-09-01T19:39:38.2052294Z",
   "artifact": "0x3z1.dll",
-  "sha256": "2F67F2EB9D8874786A0FFCDAC8552366116CAA724EDE20920DDF6A607887D95C",
-  "size": 7125352,
+  "sha256": "645DFE36D55A15824DBBB5274E9FFD2E7DCEFA78903ECA754AA8D5519BAE61EC",
+  "size": 7125864,
   "architecture": "x64",
   "authenticode": "Valid",
-  "replaced_sha256": "3A875E439BFAE435D8A6D55DAB41B73811F2C56124672BCEBA2B3D9A438EA002",
-  "changed_branch": "Footstep ESP and Sova live SDK trajectory with runtime gravity fallback",
+  "replaced_sha256": "2F67F2EB9D8874786A0FFCDAC8552366116CAA724EDE20920DDF6A607887D95C",
+  "changed_branch": "Health HP-only and vertical Ammo beside Health",
   "runtime_version": "LuaJIT 2.1",
   "api_generation": 200,
   "extension_version": 1,
@@ -35,6 +35,8 @@
     "automatic example_gamesense.lua installation",
     "enemy footstep pulse ESP with runtime velocity cadence",
     "Sova live SDK throw origin, direction, speed and gravity",
-    "Sova 0/1/2 bounce trajectory simulation"
+    "Sova 0/1/2 bounce trajectory simulation",
+    "health bar displays HP only",
+    "vertical ammo bar beside health bar"
   ]
 }
