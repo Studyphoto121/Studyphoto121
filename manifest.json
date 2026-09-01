@@ -1,13 +1,13 @@
 {
   "name": "private Lua API extensions and GameSense-style compatibility",
-  "created_at": "2026-08-31T15:24:35.824630+00:00",
+  "created_at": "2026-09-01T19:13:11.3920888Z",
   "artifact": "0x3z1.dll",
-  "sha256": "D3304FF6494B61B3B651B8D2B4998E59FC07AEC968AFD0E9AA1EA0F123B97E15",
-  "size": 5239144,
+  "sha256": "3A875E439BFAE435D8A6D55DAB41B73811F2C56124672BCEBA2B3D9A438EA002",
+  "size": 7125864,
   "architecture": "x64",
   "authenticode": "Valid",
-  "replaced_sha256": "ABEB42409E98A37136D09E6D8268842380975CE6490A81ADDC58DBED035F308E",
-  "changed_branch": "Lua Executor API 200 extension and compatibility registration",
+  "replaced_sha256": "48815E9A5E3AC38EC85522B8D0134A7EE5C42B3C6AFA41BD7D569BD600559B5D",
+  "changed_branch": "Footstep ESP and Sova live SDK trajectory",
   "runtime_version": "LuaJIT 2.1",
   "api_generation": 200,
   "extension_version": 1,
@@ -32,6 +32,9 @@
     "client, renderer, globals, ui, entity, plist, database and vector compatibility adapters",
     "native renderer measure_text, arc and gradient rectangle",
     "native UI visibility, labels and getter/setter controls",
-    "automatic example_gamesense.lua installation"
+    "automatic example_gamesense.lua installation",
+    "enemy footstep pulse ESP with runtime velocity cadence",
+    "Sova live SDK throw origin, direction, speed and gravity",
+    "Sova 0/1/2 bounce trajectory simulation"
   ]
 }
